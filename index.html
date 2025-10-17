@@ -32,9 +32,9 @@ html,body{
   button, input, select{ font:inherit; }
 
   /* 3 bloques verticales */
-  .app{ display:flex; flex-direction:column; min-height:100dvh; max-width:1000px; margin:0 
+  .app{ display:flex; flex-direction:column; min-height:100dvh; max-width:1000px; 
 
-auto; }
+margin:0 auto; }
   .top,.middle,.bottom{ width:100%; padding:12px; }
 .top{ min-height:290px; overflow:visible; z-index:3; }
 .middle{ min-height:280px; overflow:visible; z-index:2; }
@@ -54,7 +54,9 @@ overflow:hidden; z-index:1; }
   .row{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
   .row > *{ flex:1; min-width:110px; }
   .muted{ color:var(--text-dim); font-size:.9rem; }
-  .switch{ display:inline-flex; align-items:center; gap:8px; cursor:pointer; user-select:none; }
+  .switch{ display:inline-flex; align-items:center; gap:8px; cursor:pointer; user-
+
+select:none; }
   .switch input{ accent-color:var(--ok); width:18px; height:18px; }
 
   .btn{
@@ -62,18 +64,22 @@ overflow:hidden; z-index:1; }
     padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:700;
     box-shadow:0 6px 14px rgba(37,99,235,.35);
   }
-  .btn.secondary{ background:#2a3248; color:#eaf; box-shadow:none; border:1px solid #334060; }
+  .btn.secondary{ background:#2a3248; color:#eaf; box-shadow:none; border:1px solid 
+
+#334060; }
   .btn.warning{ background:var(--warn); color:#1b1302; box-shadow:0 6px 14px rgba
 
 (245,158,11,.3); }
   .btn:disabled{ opacity:.5; cursor:not-allowed; }
-  .players{ display:flex; flex-direction:column; gap:8px; padding-right:2px; overflow:visible; }
-  .player-item{ display:flex; align-items:center; gap:8px; padding:8px; background:#0f1320; 
+  .players{ display:flex; flex-direction:column; gap:8px; padding-right:2px; 
 
-border:1px solid #1d2437; border-radius:12px; }
-  .pill{ width:16px; height:16px; border-radius:50%; border:1px solid #0008; box-shadow:0 0 0 2px 
+overflow:visible; }
+  .player-item{ display:flex; align-items:center; gap:8px; padding:8px; 
 
-#0003 inset; }
+background:#0f1320; border:1px solid #1d2437; border-radius:12px; }
+  .pill{ width:16px; height:16px; border-radius:50%; border:1px solid #0008; box-
+
+shadow:0 0 0 2px #0003 inset; }
   .player-name{ font-weight:700; }
   .player-total{ margin-left:auto; color:#a1b1f7; font-weight:600; }
 
@@ -157,9 +163,9 @@ space:nowrap; width:100%; }
   transform: scale(.95);
 }
 
-  .tap-num{ position:absolute; bottom:-26px; color:#9fb3ff; font-weight:800; letter-spacing:.4px; 
+  .tap-num{ position:absolute; bottom:-26px; color:#9fb3ff; font-weight:800; letter-
 
-}
+spacing:.4px; }
 
   ::-webkit-scrollbar{ height:8px; width:8px; }
   ::-webkit-scrollbar-thumb{ background:#2a3350; border-radius:10px; }
@@ -173,30 +179,30 @@ space:nowrap; width:100%; }
     <div class="card">
       <h3 class="section-title">Configuración</h3>
       <div class="controls">
-        <div class="field"><label>⏱️ Tiempo (s)</label><input id="seconds" type="number" min="3" 
+        <div class="field"><label>⏱️ Tiempo (s)</label><input id="seconds" type="number" 
 
-max="120" value="10" /></div>
-        <div class="field"><label>🔁 Rondas</label><input id="rounds" type="number" min="1" 
+min="3" max="120" value="10" /></div>
+        <div class="field"><label>🔁 Rondas</label><input id="rounds" type="number" 
 
-max="10" value="3" /></div>
-        <div class="field"><label>🎚️ Dificultad</label><input id="difficulty" type="range" min="1" 
+min="1" max="10" value="3" /></div>
+        <div class="field"><label>🎚️ Dificultad</label><input id="difficulty" type="range" 
 
-max="100" value="50" /><div class="muted small">Más <b>difícil</b> → círculo <b>más 
+min="1" max="100" value="50" /><div class="muted small">Más <b>difícil</b> → 
 
-pequeño</b></div></div>
-        <div class="field"><label class="switch"><input id="sound-on" type="checkbox" checked 
+Pájaro <b>más pequeño</b></div></div>
+        <div class="field"><label class="switch"><input id="sound-on" type="checkbox" 
 
-/><span>🔊 Sonido</span></label></div>
+checked /><span>🔊 Sonido</span></label></div>
       </div>
       <hr style="border:none;border-top:1px solid #253050; margin:12px 0" />
-      <div class="row"><input id="player-name" type="text" placeholder="Nombre (máx.8 
+      <div class="row"><input id="player-name" type="text" placeholder="Nombre 
 
-Caracteres)" maxlength="8" /><input id="player-color" type="color" value="#ff4757" /><button 
+(máx.8 Caracteres)" maxlength="8" /><input id="player-color" type="color" 
 
-id="add-player" class="btn">+ Añadir</button></div>
-      <div class="muted small" style="margin-top:6px">Máximo 20 jugadores. Nombre y color 
+value="#ff4757" /><button id="add-player" class="btn">+ Añadir</button></div>
+      <div class="muted small" style="margin-top:6px">Máximo 20 jugadores. Nombre y 
 
-únicos.</div>
+color únicos.</div>
       <div class="players" id="players-list"></div>
       <div class="row" style="margin-top:10px"><button id="start-game" class="btn">▶️ 
 
@@ -213,39 +219,41 @@ récord</button></div>
     <div class="card">
       <h3 class="section-title">En juego</h3>
       <div class="hud">
-        <div class="stat"><div id="hud-player-dot" class="dot"></div><div><span class="muted 
+        <div class="stat"><div id="hud-player-dot" class="dot"></div><div><span 
 
-small">Jugador:</span> <span id="hud-player" class="kpi">—</span></div></div>
-        <div class="stat"><span class="muted small">Pulsaciones turno:</span><span id="hud-taps" 
+class="muted small">Jugador:</span> <span id="hud-player" class="kpi">—
 
-class="kpi">0</span></div>
-        <div class="stat"><span class="muted small">⏳ Cuenta atrás:</span><span id="hud-
+</span></div></div>
+        <div class="stat"><span class="muted small">Pulsaciones turno:</span><span 
 
-countdown" class="countdown">—</span></div>
-        <div class="stat"><span class="muted small">🏆 Récord:</span><span id="hud-record" 
+id="hud-taps" class="kpi">0</span></div>
+        <div class="stat"><span class="muted small">⏳ Cuenta atrás:</span><span 
 
-class="record">—</span></div>
+id="hud-countdown" class="countdown">—</span></div>
+        <div class="stat"><span class="muted small">🏆 Récord:</span><span id="hud-
+
+record" class="record">—</span></div>
       </div>
-      <div style="margin-top:10px; display:flex; align-items:center; justify-content:space-between; 
+      <div style="margin-top:10px; display:flex; align-items:center; justify-content:space-
 
-gap:8px;">
-        <div class="muted small">Gráfico de totales acumulados (100% = 10 × segundos × rondas)
+between; gap:8px;">
+        <div class="muted small">Gráfico de totales acumulados (100% = 10 × segundos × 
 
-</div>
+rondas)</div>
         <div class="hint small" id="scale-hint">Escala: —</div>
       </div>
       <div class="chart" id="chart"></div>
-      <div id="winner-display" class="muted" style="margin-top:10px; text-align:center; font-
+      <div id="winner-display" class="muted" style="margin-top:10px; text-align:center; 
 
-weight:700; color:#ffe78c;"></div>
+font-weight:700; color:#ffe78c;"></div>
     </div>
   </div>
 
   <!-- CÍRCULO -->
 <div class="bottom">
-  <img id="tap-circle" src="boton_inactivo.png" alt="Botón de pulsación" class="tap-button 
+  <img id="tap-circle" src="boton_inactivo.png" alt="Botón de pulsación" class="tap-
 
-inactive">
+button inactive">
   <div id="tap-readout" class="tap-num">0</div>
 </div>
 </div>
@@ -306,7 +314,9 @@ function setCircleActive(active){
 let audioCtx=null;
 function ensureAudio(){ if(!audioCtx) audioCtx=new(window.AudioContext||
 
-window.webkitAudioContext)(); if(audioCtx.state==="suspended") audioCtx.resume(); }
+window.webkitAudioContext)(); if(audioCtx.state==="suspended") audioCtx.resume
+
+(); }
 function beep(){
   if(!state.soundOn) return;
   try{
@@ -341,22 +351,28 @@ function beepCountdown(freq=440, duration=200, volume=0.1){
 
 /* ===== Récord (localStorage) ===== */
 const REC_KEY="tapbattle_record_v1";
-function loadRecord(){ try{ const r=JSON.parse(localStorage.getItem(REC_KEY)||"{}"); return 
+function loadRecord(){ try{ const r=JSON.parse(localStorage.getItem(REC_KEY)||"{}"); 
 
-(r&&Number.isFinite(r.taps))?r:{name:"—",taps:0}; }catch(e){ return {name:"—",taps:0}; } }
-function saveRecord(r){ try{ localStorage.setItem(REC_KEY, JSON.stringify(r)); }catch(e){} }
+return (r&&Number.isFinite(r.taps))?r:{name:"—",taps:0}; }catch(e){ return 
+
+{name:"—",taps:0}; } }
+function saveRecord(r){ try{ localStorage.setItem(REC_KEY, JSON.stringify(r)); }catch
+
+(e){} }
 let record=loadRecord();
-function updateRecordHUD(){ hudRecord.textContent=(record.taps>0)?`${record.taps} — 
+function updateRecordHUD(){ hudRecord.textContent=(record.taps>0)?`
 
-${record.name}`:"—"; updateScaleHint(); }
+${record.taps} — ${record.name}`:"—"; updateScaleHint(); }
 
 /* ===== Utils ===== */
 function uid(){ return Math.random().toString(36).slice(2,9); }
 function clamp(n,min,max){ return Math.max(min, Math.min(max,n)); }
-function difficultyToCircleSize(v){ const vmin=18+(100-v)*(60-18)/100; return `${vmin}vmin`; }
-function applyCircleSize(){ document.documentElement.style.setProperty("--circle-size", 
+function difficultyToCircleSize(v){ const vmin=18+(100-v)*(60-18)/100; return `${vmin}
 
-difficultyToCircleSize(state.difficulty)); }
+vmin`; }
+function applyCircleSize(){ document.documentElement.style.setProperty("--circle-
+
+size", difficultyToCircleSize(state.difficulty)); }
 
 /* ===== Jugadores ===== */
 function renderPlayers(){
@@ -392,12 +408,12 @@ function addPlayer(){
   const name=(elName.value||"").trim(), color=(elColor.value||"").trim();
   if(!name){ warn("Introduce un nombre."); return; }
   if(state.players.length>=20){ warn("Máximo 20 jugadores."); return; }
-  if(state.players.some(p=>p.name.toLowerCase()===name.toLowerCase())){ warn("Nombre ya 
+  if(state.players.some(p=>p.name.toLowerCase()===name.toLowerCase())){ warn
 
-usado."); return; }
-  if(state.players.some(p=>p.color.toLowerCase()===color.toLowerCase())){ warn("Color ya 
+("Nombre ya usado."); return; }
+  if(state.players.some(p=>p.color.toLowerCase()===color.toLowerCase())){ warn
 
-usado."); return; }
+("Color ya usado."); return; }
   state.players.push({id:uid(), name, color, scores:[], total:0});
   elName.value="";
   renderPlayers();
@@ -411,8 +427,8 @@ function removePlayer(id){
 
 /* ===== Escala del gráfico (tu nueva regla) ===== */
 function getScaleBase(){
-  const base = 10 * state.secondsPerTurn * state.roundsCount; // 100% = 10 × s × rondas
-  return Math.max(base, 1);
+  const base = 30 * state.secondsPerTurn * state.roundsCount; // 100% = 10 × s × rondas
+  return Math.max(base, 2);
 }
 function updateScaleHint(){
   scaleHint.textContent = `Escala 100% = ${getScaleBase()} toques`;
@@ -423,21 +439,27 @@ function renderChart(previewId=null, previewTotal=null){
   chart.innerHTML="";
   const base=getScaleBase();
   if(state.players.length===0){
-    const m=document.createElement("div"); m.className="muted"; m.textContent="Añade 
+    const m=document.createElement("div"); m.className="muted"; 
 
-jugadores para ver el gráfico.";
+m.textContent="Añade jugadores para ver el gráfico.";
     chart.appendChild(m); return;
   }
   state.players.forEach(p=>{
-    const shown=(previewId===p.id && Number.isFinite(previewTotal)) ? previewTotal : p.total;
-    const pct=Math.max(2, Math.min(100, Math.round((shown/base)*100))); // min 2% visible
+    const shown=(previewId===p.id && Number.isFinite(previewTotal)) ? previewTotal : 
+
+p.total;
+    const pct=Math.max(2, Math.min(100, Math.round((shown/base)*100))); // min 2% 
+
+visible
     const bar=document.createElement("div"); bar.className="bar";
     const rect=document.createElement("div"); rect.className="bar-rect";
     const fill=document.createElement("div"); fill.className="bar-fill";
     fill.style.setProperty("--col", p.color);
     fill.style.height=pct+"%";
     rect.appendChild(fill);
-    const val=document.createElement("div"); val.className="bar-val"; val.textContent=shown;
+    const val=document.createElement("div"); val.className="bar-val"; 
+
+val.textContent=shown;
     const name=document.createElement("div"); name.className="bar-name"; 
 
 name.textContent=p.name;
@@ -465,6 +487,7 @@ function startGame(){
   if(!canStart()) return;
   ensureAudio(); // ⚡ activar el contexto de audio tras la interacción del usuario
   state.inGame=true;
+victoryBeepSequence(); // 🔊 Sonido al comenzar el juego
   state.currentRound=1;
   state.currentIndex=-1;
   state.bestInSession=0;
@@ -473,7 +496,7 @@ function startGame(){
   btnStart.disabled=true;
   proceedNextTurn();
  // 🚫 Bloquear scroll durante la partida
-  document.body.style.overflow = "hidden";
+ // document.body.style.overflow = "hidden";
 }
 
 function proceedNextTurn(){
@@ -493,11 +516,14 @@ function proceedNextTurn(){
 
 function startPreCountdown(){
   clearTimers();
-  let remain = 10; // ⏱️ ahora la cuenta atrás dura 10 segundos
+  let remain = 10; // ⏱️ cuenta atrás de 10 segundos
   setHUDCountdown(`Inicio en ${remain}s`);
 
   state.preTimerId = setInterval(()=>{
     remain--; // 🔹 resta 1 segundo cada vez
+
+    // 🟢 Nuevo pitido: mientras falten más de 3 segundos
+    if (remain > 3) beepCountdown(700, 150, 0.2);
 
     // === Pitidos previos personalizados ===
     if(remain === 3){
@@ -518,7 +544,7 @@ function startPreCountdown(){
     if(remain <= 0){
       clearInterval(state.preTimerId);
       state.preTimerId = null;
-      startTurn(); // inicia el turno
+      startTurn(); // 🚀 inicia el turno del jugador
     }else{
       setHUDCountdown(`Inicio en ${remain}s`);
     }
@@ -563,8 +589,29 @@ function endTurn(){
   }
 
   renderPlayers(); // actualiza lista + gráfico
+  SiguienteJugador(); // 🔊 sonido al pasar de jugador
   setTimeout(proceedNextTurn, 600);
 }
+
+/* ===== Secuencia de sonido para pasar al siguiente jugador ===== */
+function SiguienteJugador() {
+  ensureAudio();
+
+  const interval = 0.0005; // 🔹 intervalo entre cada beep (en segundos)
+  const pause = 0.5;       // 🔹 pausa entre bloques de beeps
+  const pattern = [400, 600, 1000]; // 🔹 número de beeps en cada bloque
+
+  let offset = 0; // acumulador del tiempo total
+
+  pattern.forEach((count, index) => {
+    for (let i = 0; i < count; i++) {
+      setTimeout(() => beepCountdown(1100, 120, 0.3), offset * 1000);
+      offset += interval; // 🔹 aumenta el tiempo antes del siguiente beep
+    }
+    if (index < pattern.length - 1) offset += pause; // 🔹 pausa entre bloques
+  });
+}
+
 
 function endGame(){
   state.inGame=false;
@@ -575,9 +622,6 @@ function endGame(){
   elSeconds.disabled=elRounds.disabled=elDiff.disabled=false;
   btnStart.disabled=false;
 
-// 🔊 Reproducir secuencia de victoria
-  victoryBeepSequence();
-
   const sorted=[...state.players].sort((a,b)=>b.total-a.total);
   const winner=sorted[0];
 
@@ -587,7 +631,30 @@ function endGame(){
 
 (${winner.total} toques)` : "—"} · Récord: ${record.taps} — ${record.name}`;
   }
+victoryBeepSequence(); // 🔊 Sonido al finalizar la partida
 }
+// sonido de partida finalizada
+
+    /* ===== Secuencia final de victoria (5 + 15 + 0 beeps) ===== */
+    function victoryBeepSequence() {
+      ensureAudio();
+
+      const interval = 0.05; // 0.1s entre pitidos
+      const pause = 0.1;    // pausa de 0.2s entre bloques
+      const pattern = [15, 5, 0]; // bloques de beeps: 10 → 25 → 50
+
+      let offset = 0; // acumulador del tiempo total
+
+      pattern.forEach((count, index) => {
+        for (let i = 0; i < count; i++) {
+          setTimeout(() => beepCountdown(1100, 120, 0.3), offset * 1000);
+          offset += interval; // aumenta el tiempo entre pitidos
+        }
+        if (index < pattern.length - 1) offset += pause; // añade la pausa entre bloques
+      });
+    }
+
+// hasta aqui el codigo de partida finalizada
 
 function clearTimers(){
   if(state.preTimerId){ clearInterval(state.preTimerId); state.preTimerId=null; }
